@@ -46,10 +46,7 @@ onUnmounted(() => {
 })
 </script>
 
-
-
 <template>
-
     <div class="countdown flex justify-center text-center gap-2 sm:gap-16 mt-14 sm:mt-36 overflow-hidden">
         <div class="time-box">
             <p
@@ -76,7 +73,6 @@ onUnmounted(() => {
             <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">Seconds</h3>
         </div>
     </div>
-
 </template>
 
 

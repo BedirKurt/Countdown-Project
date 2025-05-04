@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import TimerFooter from './components/layout/TimerFooter.vue';
-import TimerHeader from './components/layout/TimerHeader.vue';
-import CountdownTimer from './components/CountdownTimer.vue';
+import { shallowRef } from 'vue';
+import BaseMain from './components/main/BaseMain.vue';
+
+
+const currentComponent = shallowRef(BaseMain);
+function newComp(activeComponent: any) {
+  currentComponent.value = activeComponent
+}
 
 </script>
 
 
 <template>
-  <div class="min-h-screen bg-stars bg-cover bg-no-repeat overflow-hidden">
-    <TimerHeader />
-    <CountdownTimer />
-    <TimerFooter />
-  </div>
+  <component :is="currentComponent" @countdown-comp="newComp" @back-main="newComp" @standart-countdown="newComp" />
 </template>
 
 <style>
