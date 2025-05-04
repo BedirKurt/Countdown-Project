@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: hsl(251, 15%, 14%);
+}
+
+
+.socials a:hover img {
+  filter: saturate(50%) sepia(100%) hue-rotate(-56deg) saturate(800%) brightness(1.1);
+}
+
+
+/*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
+.time-box > p {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Sayıyı üstte tutacak */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Dışa gölge ekledik */
+  transition: box-shadow 0.3s ease; /* Geçiş efekti */
+}
+
+/* Üst kat - hafif parlaklık */
+.time-box > p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    /* Hafif aydınlık geçiş */ rgba(0, 0, 0, 0.15)
+      /* Üst kısmın daha yumuşak kararması */
+  );
+  z-index: 0;
+}
+
+/* Alt kat - derin gölge */
+.time-box > p::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35),
+    /* Alt kısmın koyulaşması */ rgba(255, 255, 255, 0.05) /* Yumuşak geçiş */
+  );
+  z-index: 0;
+}
+
+/* Katlama çizgisi */
+.time-box > p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px; /* İnce çizgi */
+  background-color: rgba(0, 0, 0, 0.39); /* Orta çizgi belirgin */
+  z-index: 1; /* Çizginin üstte olmasını sağlıyoruz */
+  transform: translateY(-50%); /* Çizgiyi ortalayalım */
+}
+
+/* Alt gölge efekti - Katlama hissiyatı */
+.time-box > p {
+  box-shadow: inset 0 12px 18px rgb(28, 24, 43),
+    /* Alt kısmı daha belirgin ve derin yapıyoruz */ 0 4px 8px
+      rgba(0, 0, 0, 0.664); /* Dış kısmı biraz daha belirginleştiriyoruz */
+  transition: box-shadow 0.3s ease; /* Yumuşak geçiş efekti */
+}
+
+/* Sayı üstte kalsın */
+.time-box > p {
+  z-index: 2; /* Sayı çizginin üstünde */
+}
+
+.time-box > p::before,
+.time-box > p::after {
+  pointer-events: none; /* Gölgelerin ve çizgilerin etkileşimde olmaması */
+}
+
+/*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
