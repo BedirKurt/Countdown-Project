@@ -5,9 +5,12 @@ import BasePlayButton from "./UI/BasePlayButton.vue";
 import BaseResetButton from "./UI/BaseResetButton.vue";
 
 
-import { defineProps } from "vue";
+// const props = defineProps(["setComponent"]);
 
-const props = defineProps(["setComponent"]);
+const props = defineProps<{
+  setComponent: () => void,
+
+}>()
 
 const seconds = ref(0);
 const minutes = ref(0);
@@ -62,14 +65,14 @@ function formatNumber(num: number): string {
         Back
       </button>
       <h1
-        class="text-center text-white uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-24 sm:pt-36 font-redhatFont">
+        class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-24 sm:pt-36 font-redhatFont">
         Stopwatch
       </h1>
     </header>
 
     <!-- Main -->
     <main>
-      <div class="countdown flex justify-center text-center gap-6 sm:gap-16 mt-14 sm:mt-36 overflow-hidden">
+      <div class="countdown flex justify-center text-center gap-12 sm:gap-32 mt-14 sm:mt-20 overflow-hidden">
         <div class="time-box">
           <p
             class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
@@ -92,7 +95,7 @@ function formatNumber(num: number): string {
 
         <div class="time-box">
           <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
+            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor ">
             {{ formatNumber(seconds) }}
           </p>
           <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
@@ -102,7 +105,7 @@ function formatNumber(num: number): string {
       </div>
 
       <div class="flex flex-col items-center pt-6">
-        <div class="flex gap-4 lg:gap-14">
+        <div class="flex gap-1 lg:gap-32">
           <button @click="startTimer" :disabled="isRunning">
             <BasePlayButton />
           </button>
@@ -114,6 +117,7 @@ function formatNumber(num: number): string {
           </button>
         </div>
       </div>
+
     </main>
 
     <!-- Footer -->

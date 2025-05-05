@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref, onUnmounted } from "vue";
-import { defineProps } from "vue";
-const props = defineProps(["setComponent"]);
+const props = defineProps<{
+  setComponent: () => void,
+}>()
 
 const Days = ref<number | string | null>(null);
 const Hours = ref<number | string | null>(null);
@@ -58,65 +59,49 @@ onUnmounted(() => {
     <header class="overflow-hidden flex flex-col items-center justify-center">
       <button
         class="text-sm font-medium text-white bg-countdownP hover:bg-gray-700 px-10 py-1 hover:px-16 transition-[padding] rounded-xl duration-500 rounded-b-full hover:text-pColor"
-        @click="props.setComponent(null)"
-      >
+        @click="props.setComponent(null)">
         Back
       </button>
       <h1
-        class="text-center text-white uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-40 font-redhatFont"
-      >
+        class="text-center text-white uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-40 font-redhatFont">
         Countdown
       </h1>
     </header>
     <main>
-      <div
-        class="countdown flex justify-center text-center gap-2 sm:gap-16 mt-14 sm:mt-36 overflow-hidden"
-      >
+      <div class="countdown flex justify-center text-center gap-2 sm:gap-16 mt-14 sm:mt-36 overflow-hidden">
         <div class="time-box">
           <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor"
-          >
+            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
             {{ Days }}
           </p>
-          <h3
-            class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color"
-          >
+          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
             Days
           </h3>
         </div>
         <div class="time-box">
           <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor"
-          >
+            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
             {{ Hours }}
           </p>
-          <h3
-            class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color"
-          >
+          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
             Hours
           </h3>
         </div>
         <div class="time-box">
           <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor"
-          >
+            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
             {{ Minutes }}
           </p>
-          <h3
-            class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color"
-          >
+          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
             Minutes
           </h3>
         </div>
         <div class="time-box">
           <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor"
-          >
+            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
             {{ Seconds }}
           </p>
-          <h3
-            class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color"
-          >
+          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
             Seconds
           </h3>
         </div>
@@ -124,8 +109,8 @@ onUnmounted(() => {
     </main>
   </div>
   <footer
-    class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-60 md:min-h-40"
-  ></footer>
+    class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-60 md:min-h-40">
+  </footer>
 </template>
 
 <style scoped></style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { shallowRef, type Component } from "vue";
+import { shallowRef, } from "vue";
 import Stopwatch from "./components/timers/Stopwatch.vue";
 import Countdown from "./components/timers/Countdown.vue";
 import BaseButton from "./components/timers/UI/BaseButton.vue";
@@ -8,7 +8,7 @@ import BaseButton from "./components/timers/UI/BaseButton.vue";
 // import BaseTimer from "./components/timers/BaseTimer.vue";
 const currentComponent = shallowRef<null | any>(null);
 
-const setComponent = (activeComp: Component) => {
+const setComponent = (activeComp: any) => {
   currentComponent.value = activeComp;
 };
 </script>
@@ -29,21 +29,16 @@ const setComponent = (activeComp: Component) => {
     <main>
       <div class="flex justify-center text-center gap-4 sm:gap-16 mt-14 sm:mt-36 font-redhatFont">
         <div class="">
-          <!-- Css ile geliştirilecek  [h2] ! -->
-          <h2 class="text-md">Stopwatch</h2>
           <!--  svg veya başka iconlar ile gösterilecek [Button] ! // kronometre sayfasına yönlendirecek !  -->
           <button class="" @click="setComponent(Stopwatch)">
-            <BaseButton />
+            <BaseButton btn-name="Stopwatch" />
           </button>
         </div>
         <div class="">
-          <!-- Css ile geliştirilecek  [h2] ! -->
-          <h2 class="text-md">Countdown</h2>
           <!--  svg veya başka iconlar ile gösterilecek [Button] ! // kronometre sayfasına yönlendirecek !  -->
           <button class="" @click="setComponent(Countdown)">
-            <BaseButton />
+            <BaseButton btn-name="Countdown" />
           </button>
-
         </div>
       </div>
     </main>

@@ -1,11 +1,14 @@
 <script setup lang="ts">
+const props = defineProps<{
+    btnName: string,
+}>()
 </script>
 <template>
     <!-- From Uiverse.io by mobinkakei -->
     <button class="cta flex items-center bg-countdownP ">
-        <span class="span"></span>
+        <span class="span">{{ btnName }}</span>
         <span class="second">
-            <svg width="20px" height="20px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            <svg width="20px" height="40px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <path class="one"
@@ -27,7 +30,6 @@
 
 
 <style scoped>
-/* From Uiverse.io by mobinkakei */
 .cta {
     display: flex;
     padding: 0px 10px;
@@ -101,7 +103,7 @@
     }
 
     50% {
-        fill:  white;
+        fill: white;
     }
 
     100% {
