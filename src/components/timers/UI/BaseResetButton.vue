@@ -1,0 +1,56 @@
+<!-- Reset -->
+<template>
+    <button class="button">
+        <svg class="svg-icon" fill="none" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 10a9 9 0 1 1 2.6 6.4" stroke="#ff2849" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="3 6 3 10 7 10" stroke="#ff2849" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="label">Reset</span>
+    </button>
+</template>
+
+<style scoped>
+.button {
+    width: 122px;
+    height: 30px;
+    padding: 18px 22px 18px 20px;
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff284818;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.label {
+    font-family: sans-serif;
+    height: 23px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #FF2849;
+}
+
+.button:hover {
+    background: #ff284839;
+}
+
+.button:hover .svg-icon {
+    animation: pulse 0.7s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.13);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+</style>
