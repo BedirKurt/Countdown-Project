@@ -23,10 +23,7 @@ const props = defineProps<{
             </svg>
         </span>
     </button>
-
-
 </template>
-
 
 <style scoped>
 .cta {

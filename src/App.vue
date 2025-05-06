@@ -5,7 +5,7 @@ import Countdown from "./components/timers/Countdown.vue";
 import BaseButton from "./components/timers/UI/BaseButton.vue";
 
 
-const currentComponent = shallowRef<null | any>(null);
+const currentComponent = shallowRef<any>(null);
 
 const setComponent = (activeComp: any) => {
   currentComponent.value = activeComp;
@@ -14,7 +14,6 @@ const setComponent = (activeComp: any) => {
 
 <template>
   <component :is="currentComponent" :setComponent="setComponent" />
-  <!--Not (1)** Sorun Çıkarırsa min-h-screen geri al  [1.div]-->
   <div v-if="currentComponent === null" class="min-h-[40vw] bg-stars bg-cover bg-no-repeat overflow-hidden">
  
     <header class="overflow-hidden flex flex-col items-center justify-center">
@@ -38,11 +37,9 @@ const setComponent = (activeComp: any) => {
         </div>
       </div>
     </main>
-
-    <!-- Footer -->
     <footer>
       <div
-        class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-60 md:min-h-40">
+        class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44 md:min-h-40">
       </div>
     </footer>
   </div>

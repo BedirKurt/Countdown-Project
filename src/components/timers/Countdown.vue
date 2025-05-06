@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, onUnmounted } from "vue";
+import BaseCount from "./UI/BaseCount.vue";
+
 const props = defineProps<{
   setComponent: (value: null) => void,
 }>()
@@ -16,10 +18,7 @@ const handleDate = ref<string | number>('');
 console.log(handleDate.value)
 const nowDate = new Date().toISOString().split('T')[0];
 
-
-
 function calculationDate() {
-  // const date = new Date("May 17,2025,00:00:00").getTime();
 
   const date: string | number = new Date(handleDate.value).getTime();
 
@@ -62,9 +61,6 @@ function calculationDate() {
   }
 }
 
-
-
-
 onMounted(() => {
   calculationDate();
   intervalId = setInterval(calculationDate, 1000);
@@ -77,6 +73,7 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen bg-stars bg-cover bg-no-repeat overflow-hidden">
+
     <header class="overflow-hidden flex flex-col items-center justify-center">
       <button
         class="text-sm font-medium text-white bg-countdownP hover:bg-gray-700 px-10 py-1 hover:px-16 transition-[padding] rounded-xl duration-500 rounded-b-full hover:text-pColor"
@@ -88,8 +85,6 @@ onUnmounted(() => {
         Countdown
       </h1>
     </header>
-
-
     <section v-if="!handleDate">
       <div class="flex justify-center mt-24 lg:mt-36 ">
         <input type="date" v-model="handleDate" :min="nowDate"
@@ -98,57 +93,17 @@ onUnmounted(() => {
       <span class="flex justify-center font-redhatFont mt-3 text-sm"> > Please select the date you want to countdown to
         < </span>
     </section>
-
-
-
     <main v-if="handleDate">
       <div class="countdown flex justify-center text-center gap-2 sm:gap-16 mt-14 sm:mt-36 overflow-hidden">
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ Days }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Days
-          </h3>
-        </div>
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ Hours }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Hours
-          </h3>
-        </div>
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ Minutes }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Minutes
-          </h3>
-        </div>
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ Seconds }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Seconds
-          </h3>
-        </div>
+        <BaseCount :count="Days" label="Days" />
+        <BaseCount :count="Hours" label="Hours" />
+        <BaseCount :count="Minutes" label="Minutes" />
+        <BaseCount :count="Seconds" label="Seconds" />
       </div>
     </main>
   </div>
   <footer
-    class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-60 md:min-h-40">
+    class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44  md:min-h-40">
   </footer>
 </template>
 
-<style scoped>
-.date {
-  background-color: rgb(255, 0, 0);
-}
-</style>

@@ -1,56 +1,8 @@
 <template>
-    <button class="button">
-        <svg class="svg-icon" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="animate-pulse" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
             <g stroke="#ff2849" stroke-linecap="round" stroke-width="2">
                 <polygon points="6,4 18,12 6,20" fill="#ff2849" />
             </g>
         </svg>
-        <span class="label">Play</span>
-    </button>
+        <span class="font-redhatFont h-5 text-sm text-[#FF2849]">Play</span>
 </template>
-
-<style scoped>
-.button {
-    width: 122px;
-    height: 30px;
-    padding: 18px 22px 18px 20px;
-    gap: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #ff284818;
-    border-radius: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.label {
-    font-family: sans-serif;
-    height: 23px;
-    font-size: 19px;
-    line-height: 24px;
-    color: #FF2849;
-}
-
-.button:hover {
-    background: #ff284839;
-}
-
-.button:hover .svg-icon {
-    animation: pulse 0.7s linear infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.13);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-</style>

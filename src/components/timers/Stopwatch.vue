@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, } from "vue";
 import BasePauseButton from "./UI/BasePauseButton.vue";
 import BasePlayButton from "./UI/BasePlayButton.vue";
 import BaseResetButton from "./UI/BaseResetButton.vue";
+import BaseCount from "./UI/BaseCount.vue";
 
 const props = defineProps<{
   setComponent: (value: null) => void,
 
 }>()
 
-const seconds = ref(0);
-const minutes = ref(0);
-const hours = ref(0);
-const isRunning = ref(false);
+const seconds = ref<any>(0);
+const minutes = ref<any>(0);
+const hours = ref<any>(0);
+const isRunning = ref<boolean>(false);
+
 
 let timer: number | null = null;
 
@@ -47,14 +49,16 @@ function resetTimer() {
   hours.value = 0;
 }
 
+
 function formatNumber(num: number): string {
   return num < 10 ? "0" + num : num.toString();
 }
+
 </script>
 
 <template>
   <div class="min-h-screen bg-stars bg-cover bg-no-repeat overflow-hidden">
-    <!-- Header-->
+
     <header class="overflow-hidden flex flex-col items-center justify-center">
       <button
         class="text-sm font-medium text-white bg-countdownP hover:bg-gray-700 px-10 py-1 hover:px-16 rounded-xl transition-[padding] duration-500 rounded-b-full hover:text-pColor"
@@ -66,62 +70,29 @@ function formatNumber(num: number): string {
         Stopwatch
       </h1>
     </header>
-
-    <!-- Main -->
     <main>
       <div class="countdown flex justify-center text-center gap-12 sm:gap-32 mt-14 sm:mt-20 overflow-hidden">
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ formatNumber(hours) }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Hours
-          </h3>
-        </div>
-
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor">
-            {{ formatNumber(minutes) }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Minutes
-          </h3>
-        </div>
-
-        <div class="time-box">
-          <p
-            class="w-20 sm:w-28 h-20 sm:h-28 flex items-center justify-center text-3xl sm:text-6xl rounded-full font-redhatFont bg-countdownP text-pColor ">
-            {{ formatNumber(seconds) }}
-          </p>
-          <h3 class="uppercase tracking-widest text-xs font-redhatFont pt-2 text-cdh3Color">
-            Seconds
-          </h3>
-        </div>
+        <BaseCount :count="formatNumber(hours)" label='Hours' />
+        <BaseCount :count="formatNumber(minutes)" label='Minutes' />
+        <BaseCount :count="formatNumber(seconds)" label='Seconds' />
       </div>
-
-      <div class="flex flex-col items-center pt-6">
-        <div class="flex gap-1 lg:gap-32">
-          <button @click="startTimer" :disabled="isRunning">
+      <div class="flex justify-center items-center pt-6 gap-1 lg:gap-32">
+          <button @click="startTimer" :disabled="isRunning"
+            class="button w-28 h-7 p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
             <BasePlayButton />
           </button>
-          <button @click="stopTimer" :disabled="!isRunning">
+          <button @click="stopTimer" :disabled="!isRunning"
+            class="button w-32 h-7 p-6  flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
             <BasePauseButton />
           </button>
-          <button @click="resetTimer">
+          <button @click="resetTimer"
+            class="button w-28 h-7  p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
             <BaseResetButton />
           </button>
-        </div>
       </div>
-
     </main>
-
-    <!-- Footer -->
     <footer
-      class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-60 md:min-h-40">
+      class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44 md:min-h-40 ">
     </footer>
   </div>
 </template>
-
-<style scoped></style>
