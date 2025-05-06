@@ -4,9 +4,8 @@ const props = defineProps<{
 }>()
 </script>
 <template>
-    <!-- From Uiverse.io by mobinkakei -->
-    <button class="cta flex items-center bg-countdownP ">
-        <span class="span">{{ btnName }}</span>
+    <button class="cta flex items-center bg-countdownP">
+        <span class="span active:text-pColor">{{ props.btnName }}</span>
         <span class="second">
             <svg width="20px" height="40px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">

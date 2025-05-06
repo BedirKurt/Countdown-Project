@@ -4,11 +4,8 @@ import BasePauseButton from "./UI/BasePauseButton.vue";
 import BasePlayButton from "./UI/BasePlayButton.vue";
 import BaseResetButton from "./UI/BaseResetButton.vue";
 
-
-// const props = defineProps(["setComponent"]);
-
 const props = defineProps<{
-  setComponent: () => void,
+  setComponent: (value: null) => void,
 
 }>()
 
