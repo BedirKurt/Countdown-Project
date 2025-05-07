@@ -66,7 +66,7 @@ function formatNumber(num: number): string {
         Back
       </button>
       <h1
-        class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-24 sm:pt-36 font-redhatFont">
+        class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-28 sm:pt-36 md:pt-32 lg:pt-44 font-redhatFont">
         Stopwatch
       </h1>
     </header>
@@ -76,20 +76,22 @@ function formatNumber(num: number): string {
         <BaseCount :count="formatNumber(minutes)" label='Minutes' />
         <BaseCount :count="formatNumber(seconds)" label='Seconds' />
       </div>
+
       <div class="flex justify-center items-center pt-6 gap-1 lg:gap-32">
-          <button @click="startTimer" :disabled="isRunning"
-            class="button w-28 h-7 p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
-            <BasePlayButton />
-          </button>
-          <button @click="stopTimer" :disabled="!isRunning"
-            class="button w-32 h-7 p-6  flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
-            <BasePauseButton />
-          </button>
-          <button @click="resetTimer"
-            class="button w-28 h-7  p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
-            <BaseResetButton />
-          </button>
+        <button @click="startTimer" :disabled="isRunning"
+          class="button w-28 h-7 p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
+          <BasePlayButton />
+        </button>
+        <button @click="stopTimer" :disabled="!isRunning"
+          class="button w-32 h-7 p-6  flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
+          <BasePauseButton />
+        </button>
+        <button @click="resetTimer"
+          class="button w-28 h-7  p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
+          <BaseResetButton />
+        </button>
       </div>
+
     </main>
     <footer
       class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44 md:min-h-40 ">

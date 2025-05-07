@@ -7,11 +7,10 @@ body {
   background-color: hsl(251, 15%, 14%);
 }
 
-
 .socials a:hover img {
-  filter: saturate(50%) sepia(100%) hue-rotate(-56deg) saturate(800%) brightness(1.1);
+  filter: saturate(50%) sepia(100%) hue-rotate(-56deg) saturate(800%)
+    brightness(1.1);
 }
-
 
 /*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
 .time-box > p {

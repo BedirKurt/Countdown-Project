@@ -34,7 +34,9 @@ const props = defineProps<{
     color: white;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
-    transform: skewX(-10deg);
+    
+    /* transform: skewX(-10deg); */
+
     border: none;
     cursor: pointer;
 }
@@ -59,7 +61,7 @@ const props = defineProps<{
 }
 
 .span {
-    transform: skewX(15deg);
+    /* transform: skewX(15deg); */
 }
 
 .second {

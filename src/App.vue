@@ -3,6 +3,7 @@ import { shallowRef, } from "vue";
 import Stopwatch from "./components/timers/Stopwatch.vue";
 import Countdown from "./components/timers/Countdown.vue";
 import BaseButton from "./components/timers/UI/BaseButton.vue";
+import ChronometerW from "./components/ChronometerW.vue";
 
 
 const currentComponent = shallowRef<any>(null);
@@ -14,17 +15,17 @@ const setComponent = (activeComp: any) => {
 
 <template>
   <component :is="currentComponent" :setComponent="setComponent" />
-  <div v-if="currentComponent === null" class="min-h-[40vw] bg-stars bg-cover bg-no-repeat overflow-hidden">
- 
+  <div v-if="currentComponent === null" class="min-h-[40vw] bg-stars bg-cover bg-no-repeat ">
+
     <header class="overflow-hidden flex flex-col items-center justify-center">
       <h1
-        class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-40 font-redhatFont">
+        class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] text-2xl pt-40 font-redhatFont">
         Select Countdown Section
       </h1>
     </header>
-   
+
     <main>
-      <div class="flex justify-center text-center gap-4 sm:gap-16 mt-24 sm:mt-36 font-redhatFont">
+      <div class="flex  justify-center text-center gap-4 sm:gap-16 mt-24 sm:mt-36 font-redhatFont">
         <div>
           <button @click="setComponent(Stopwatch)">
             <BaseButton btn-name="Stopwatch" />
@@ -35,6 +36,11 @@ const setComponent = (activeComp: any) => {
             <BaseButton btn-name="Countdown" />
           </button>
         </div>
+        <div>
+          <button @click="setComponent(ChronometerW)">
+            <BaseButton btn-name="Chronometer" />
+          </button>
+        </div>
       </div>
     </main>
     <footer>
@@ -42,6 +48,7 @@ const setComponent = (activeComp: any) => {
         class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44 md:min-h-40">
       </div>
     </footer>
+
   </div>
 </template>
 
@@ -51,4 +58,6 @@ const setComponent = (activeComp: any) => {
   padding: 0;
   box-sizing: border-box;
 }
+
+
 </style>
