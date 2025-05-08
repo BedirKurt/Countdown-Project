@@ -34,9 +34,7 @@ const props = defineProps<{
     color: white;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
-    
     /* transform: skewX(-10deg); */
-
     border: none;
     cursor: pointer;
 }
@@ -58,10 +56,6 @@ const props = defineProps<{
 .cta:hover .second {
     transition: 0.5s;
     margin-right: 25px;
-}
-
-.span {
-    /* transform: skewX(15deg); */
 }
 
 .second {

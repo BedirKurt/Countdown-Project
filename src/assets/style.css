@@ -12,13 +12,51 @@ body {
     brightness(1.1);
 }
 
+
+
+
+
+
+
+
+
+
+@media (max-width: 639px) {
+  .custom-button-position {
+    left: calc(50% + 4.4rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-button-position  {
+    left: calc(50% + 11.5rem);
+  }
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+
+
+
+
+
 /*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
 .time-box > p {
   position: relative;
   overflow: hidden;
-  z-index: 1; /* Sayıyı üstte tutacak */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Dışa gölge ekledik */
-  transition: box-shadow 0.3s ease; /* Geçiş efekti */
+  z-index: 1; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transition: box-shadow 0.3s ease; 
 }
 
 /* Üst kat - hafif parlaklık */

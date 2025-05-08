@@ -3,7 +3,7 @@ import { shallowRef, } from "vue";
 import Stopwatch from "./components/timers/Stopwatch.vue";
 import Countdown from "./components/timers/Countdown.vue";
 import BaseButton from "./components/timers/UI/BaseButton.vue";
-import ChronometerW from "./components/ChronometerW.vue";
+import Chronometer from "./components/timers/Chronometer.vue";
 
 
 const currentComponent = shallowRef<any>(null);
@@ -14,7 +14,9 @@ const setComponent = (activeComp: any) => {
 </script>
 
 <template>
+
   <component :is="currentComponent" :setComponent="setComponent" />
+
   <div v-if="currentComponent === null" class="min-h-[40vw] bg-stars bg-cover bg-no-repeat ">
 
     <header class="overflow-hidden flex flex-col items-center justify-center">
@@ -37,18 +39,18 @@ const setComponent = (activeComp: any) => {
           </button>
         </div>
         <div>
-          <button @click="setComponent(ChronometerW)">
+          <button @click="setComponent(Chronometer)">
             <BaseButton btn-name="Chronometer" />
           </button>
         </div>
       </div>
     </main>
+
     <footer>
       <div
         class="socials bg-hills bg-cover bg-no-repeat overflow-hidden fixed bottom-0 w-full min-h-36 lg:min-h-44 md:min-h-40">
       </div>
     </footer>
-
   </div>
 </template>
 
@@ -58,6 +60,4 @@ const setComponent = (activeComp: any) => {
   padding: 0;
   box-sizing: border-box;
 }
-
-
 </style>
