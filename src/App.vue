@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { shallowRef, } from "vue";
 import Stopwatch from "./components/timers/Stopwatch.vue";
-import Countdown from "./components/timers/Countdown.vue";
 import BaseButton from "./components/timers/UI/BaseButton.vue";
-import Chronometer from "./components/timers/Chronometer.vue";
+import Countdown from "./components/timers/Countdown.vue";
 
 
 const currentComponent = shallowRef<any>(null);
@@ -33,14 +32,14 @@ const setComponent = (activeComp: any) => {
             <BaseButton btn-name="Stopwatch" />
           </button>
         </div>
-        <div>
+        <!-- <div>
           <button @click="setComponent(Countdown)">
             <BaseButton btn-name="Countdown" />
           </button>
-        </div>
+        </div> -->
         <div>
-          <button @click="setComponent(Chronometer)">
-            <BaseButton btn-name="Chronometer" />
+          <button @click="setComponent(Countdown)">
+            <BaseButton btn-name="Countdown" />
           </button>
         </div>
       </div>

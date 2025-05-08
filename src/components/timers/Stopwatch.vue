@@ -83,11 +83,11 @@ function formatNumber(num: number): string {
           <BasePlayButton />
         </button>
         <button @click="stopTimer" :disabled="!isRunning"
-          class="button w-32 h-7 p-6  flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
+          class="button w-32 h-7 p-5  flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
           <BasePauseButton />
         </button>
         <button @click="resetTimer"
-          class="button w-28 h-7  p-4 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
+          class="button w-28 h-7  p-4 mt-1 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839]">
           <BaseResetButton />
         </button>
       </div>

@@ -13,14 +13,6 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
 @media (max-width: 639px) {
   .custom-button-position {
     left: calc(50% + 4.4rem);

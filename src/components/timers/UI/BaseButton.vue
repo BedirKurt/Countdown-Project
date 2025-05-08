@@ -4,10 +4,10 @@ const props = defineProps<{
 }>()
 </script>
 <template>
-    <button class="cta flex items-center bg-countdownP">
-        <span class="span active:text-pColor">{{ props.btnName }}</span>
+    <button class="cta flex items-center bg-countdownP lg:px-14 px-5">
+        <span class="span active:text-pColor lg:p-1 text-sm">{{ props.btnName }}</span>
         <span class="second">
-            <svg width="20px" height="40px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            <svg width="20px" height="30px" viewBox="0 0 99 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <path class="one"
@@ -28,9 +28,9 @@ const props = defineProps<{
 <style scoped>
 .cta {
     display: flex;
-    padding: 0px 10px;
+    
     text-decoration: none;
-    font-size: 14px;
+   
     color: white;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
