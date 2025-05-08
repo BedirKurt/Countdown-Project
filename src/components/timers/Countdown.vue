@@ -36,7 +36,7 @@ function formatNumber(num: number): string {
 }
 
 watch([inputHours, inputMinutes, inputSeconds], () => {
-    if (Number(inputHours.value) > 24) inputHours.value = '24'
+    if (Number(inputHours.value) > 23) inputHours.value = '23'
     if (Number(inputMinutes.value) > 59) inputMinutes.value = '59'
     if (Number(inputSeconds.value) > 59) inputSeconds.value = '59'
 })
@@ -188,7 +188,7 @@ onBeforeUnmount(() => {
                     </transition>
                     <transition name="fade">
                         <button v-if="isRunning" @click="resetCountdown"
-                            class="absolute transition-opacity duration-500 button w-28 h-7 p-4 lg:mt-1 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839] custom-button-position">
+                            class="absolute transition-opacity duration-500 button w-28 h-7 p-4 mt-1 lg:mt-1 flex justify-center items-center bg-[#ff284818] rounded-2xl border-none cursor-pointer hover:bg-[#ff284839] custom-button-position">
                             <BaseResetButton />
                         </button>
                     </transition>
