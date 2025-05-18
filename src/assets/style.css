@@ -2,53 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  pointer-events: none;
+  /* background-color: rgba(204, 204, 204, 0.185); */
+}
+
 body {
   color: rgba(255, 255, 255, 0.87);
   background-color: hsl(251, 15%, 14%);
-}
 
-.socials a:hover img {
-  filter: saturate(50%) sepia(100%) hue-rotate(-56deg) saturate(800%)
-    brightness(1.1);
-}
-
-
-@media (max-width: 639px) {
-  .custom-button-position {
-    left: calc(50% + 4.4rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .custom-button-position  {
-    left: calc(50% + 11.5rem);
-  }
-}
-
-
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity 0.5s;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
+  background-image: url("../images/bg-stars.svg"),
+    linear-gradient(180deg, #191a24 17%, #1e1f29 51%, #2b212d 83%);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-attachment: fixed;
 }
 
 
 
+.fade-slide-left-enter-active,
+.fade-slide-left-leave-active,
+.fade-slide-right-enter-active,
+.fade-slide-right-leave-active {
+  transition: all 0.4s ease;
+}
 
+.fade-slide-left-enter-from,
+.fade-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
 
-
+.fade-slide-right-enter-from,
+.fade-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
 
 /*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
 .time-box > p {
   position: relative;
   overflow: hidden;
-  z-index: 1; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-  transition: box-shadow 0.3s ease; 
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 
 /* Üst kat - hafif parlaklık */
@@ -114,5 +118,3 @@ body {
 .time-box > p::after {
   pointer-events: none; /* Gölgelerin ve çizgilerin etkileşimde olmaması */
 }
-
-/*  Countdown Timer Kısmı ( GPT kullanılmıştır ! ) */
