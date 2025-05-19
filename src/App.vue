@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
 
-  <canvas ref="canvasRef" aria-hidden="true" class="fixed top-0 left-0 w-full h-full z-0"></canvas>
+  <canvas ref="canvasRef" aria-hidden="true" class="fixed top-0 left-0 w-full h-full z-0 opacity-40"></canvas>
   <component :is="currentComponent" :setComponent="setComponent" />
   <div v-if="currentComponent === null">
 
