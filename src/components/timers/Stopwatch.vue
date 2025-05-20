@@ -64,7 +64,7 @@ function formatNumber(num: number): string {
       Back
     </button>
     <h1
-      class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-28 sm:pt-36 md:pt-32 lg:pt-44 font-redhatFont">
+      class="text-center text-[#FF2849] uppercase tracking-[1vw] sm:tracking-[0.5vw] max-w-screen text-2xl pt-28 sm:pt-36 md:pt-32 lg:pt-36 font-redhatFont">
       Stopwatch
     </h1>
   </header>
